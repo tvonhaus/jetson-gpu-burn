@@ -414,7 +414,7 @@ void listenClients(std::vector<int> clientFd, std::vector<pid_t> clientPid, int 
 	fd_set waitHandles;
 	
 	pid_t tempPid;
-	int tempHandle = pollTemp(&tempPid);
+	int tempHandle = 0;
 	int maxHandle = tempHandle;
 
 	FD_ZERO(&waitHandles);
