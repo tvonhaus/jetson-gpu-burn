@@ -17,5 +17,7 @@ If you want to stress test the CPU then you need to install stress:
 sudo apt-get install stress
 
 #A good utility for viewing stats.
+
 #sudo apt install python3-pip
+
 #sudo -H pip install -U jetson-stats
