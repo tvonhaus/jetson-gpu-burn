@@ -14,8 +14,12 @@ sudo apt-get update
 
 sudo apt-get install cuda-toolkit-10-2
 
+
 If you want to stress test the CPU then you need to install stress:
 
 sudo apt-get install stress
 
+
 Last, you can run make, and then run script.sh to stress the GPU and CPUs
+
+To view the stats, you can run tegrastats
