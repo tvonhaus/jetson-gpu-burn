@@ -24,15 +24,7 @@ Last, you can run make, and then run script.sh to stress the GPU and CPUs
 
 To view the stats, you can run tegrastats
 
-New in Jetpack 4.3~4.5
 
-## Installing SDK Components
-
-sudo vim /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
-
-sudo apt-get update
-
-sudo apt -y install nvidia-jetpack
 
 ## Installing jtop (graphical CPU/GPU usage command)
 
@@ -44,3 +36,14 @@ sudo -H pip install -U jetson-stats
 
 jtop
 
+
+
+## Common problems:
+
+If you get this error:
+
+./gpu_burn: error while loading shared libraries: libcublasLt.so.10: cannot open shared object file: No such file or directory
+
+Use this to fix it:
+
+sudo find / -name "libcublasLt.so.10.2.3.300" -exec ln -s '{}' /usr/lib/aarch64-linux-gnu/libcublasLt.so.10 ';'
