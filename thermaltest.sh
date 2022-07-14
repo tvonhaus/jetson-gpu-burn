@@ -1,8 +1,8 @@
 TIME=500
 
 tegrastats --logfile teststats.txt &
-xterm -e ./gpu_burn -d -tc $TIME &
-xterm -e stress --cpu 12  --timeout $TIME 
+xterm -e ./gpu_burn -tc $TIME &
+xterm -e stress --cpu 11  --timeout $TIME 
 tegrastats --logfile teststats.txt --stop
 
 read -r LINE < teststats.txt
@@ -31,40 +31,4 @@ echo "${CPU_TEMP:4},${GPU_TEMP:4},${SOC0_TEMP:5},${SOC1_TEMP:5},${SOC2_TEMP:5},$
 
 done < teststats.txt
 
-#rm teststats.txt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+rm teststats.txt
