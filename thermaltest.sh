@@ -14,17 +14,17 @@ echo "CPU Temp,GPU Temp,SOC0 Temp,SOC1 Temp,SOC2 Temp,Tdiode Temp" >> $DATE-$TES
 
 while read p; do
 	
-	CPU_TEMP=$(echo "$p" | grep -oE CPU@[[:digit:]]*.?[[:digit:]]*C)	
+	CPU_TEMP=$(echo "$p" | grep -oE CPU@[[:digit:]]*\\.?[[:digit:]]*)	
 
-	SOC0_TEMP=$(echo "$p" | grep -oE SOC0@[[:digit:]]*.?[[:digit:]]*C)
+	SOC0_TEMP=$(echo "$p" | grep -oE SOC0@[[:digit:]]*\\.?[[:digit:]]*)
 
-	SOC1_TEMP=$(echo "$p" | grep -oE SOC1@[[:digit:]]*.?[[:digit:]]*C)
+	SOC1_TEMP=$(echo "$p" | grep -oE SOC1@[[:digit:]]*\\.?[[:digit:]]*)
 
-	SOC2_TEMP=$(echo "$p" | grep -oE SOC2@[[:digit:]]*.?[[:digit:]]*C)
+	SOC2_TEMP=$(echo "$p" | grep -oE SOC2@[[:digit:]]*\\.?[[:digit:]]*)
 
-	GPU_TEMP=$(echo "$p" | grep -oE GPU@[[:digit:]]*.?[[:digit:]]*C)
+	GPU_TEMP=$(echo "$p" | grep -oE GPU@[[:digit:]]*\\.?[[:digit:]]*)
 
-	TDIODE_TEMP=$(echo "$p" | grep -oE Tdiode@[[:digit:]]*.?[[:digit:]]*C)
+	TDIODE_TEMP=$(echo "$p" | grep -oE Tdiode@[[:digit:]]*\\.?[[:digit:]]*)
 
 echo "${CPU_TEMP:4},${GPU_TEMP:4},${SOC0_TEMP:5},${SOC1_TEMP:5},${SOC2_TEMP:5},${TDIODE_TEMP:7}" >>  $DATE-$TEST_TIME.csv
 
